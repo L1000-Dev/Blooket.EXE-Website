@@ -1,5 +1,5 @@
 // --- REDIRECT TIMER LOGIC ---
-const returnUrl = new URLSearchParams(window.location.search).get("return") || "https://blooket.com";
+const returnUrl = new URLSearchParams(window.location.search).get("return") || "https://blooket.com" || "https://play.blooket.com/play";
 let seconds = 60;
 const timerDisplay = document.getElementById("timer");
 
