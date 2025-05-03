@@ -11,7 +11,8 @@ try {
 // --- Whitelisted Blooket URLs ---
 const allowedUrls = [
   'https://www.blooket.com/',
-  'https://dashboard.blooket.com/',
+  'https://dashboard.blooket.com/create',
+  'https://dashboard.blooket.com/my-sets',
   'https://play.blooket.com/play/',
   'https://goldquest.blooket.com/',
   'https://monsterbrawl.blooket.com/',
