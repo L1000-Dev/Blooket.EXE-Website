@@ -1,5 +1,25 @@
 // --- REDIRECT TIMER LOGIC ---
 const returnUrl = new URLSearchParams(window.location.search).get("return") || "https://blooket.com";
+const allowedUrls = [
+  'https://www.blooket.com',
+  'https://dashboard.blooket.com',
+  'https://play.blooket.com/play',
+  'https://goldquest.blooket.com',
+  'https://monsterbrawl.blooket.com',
+  'https://cryptohack.blooket.com',
+  'https://fishingfrenzy.blooket.com',
+  'https://deceptivedinos.blooket.com',
+  'https://blookrush.blooket.com',
+  'https://battleroyale.blooket.com',
+  'https://towerdefense.blooket.com',
+  'https://cafe.blooket.com',
+  'https://factory.blooket.com',
+  'https://racing.blooket.com',
+  'https://crazykingdom.blooket.com',
+  'https://towerofdoom.blooket.com',
+  'https://classic.blooket.com',
+  'https://towerdefense2.blooket.com',
+];
 let seconds = 60;
 const timerDisplay = document.getElementById("timer");
 
