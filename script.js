@@ -1,5 +1,14 @@
 // --- REDIRECT TIMER LOGIC ---
-const returnUrl = new URLSearchParams(window.location.search).get("return") || "https://blooket.com";
+const returnUrl = new URLSearchParams(window.location.search).get("return") || "https://www.blooket.com";
+let decodedReturnUrl;
+
+try {
+    decodedReturnUrl = decodeURIComponent(returnUrl);
+} catch (e) {
+    decodedReturnUrl = "https://www.blooket.com";
+}
+
+// --- Whitelisted Blooket URLs ---
 const allowedUrls = [
   'https://www.blooket.com',
   'https://dashboard.blooket.com',
@@ -20,16 +29,21 @@ const allowedUrls = [
   'https://classic.blooket.com',
   'https://towerdefense2.blooket.com',
 ];
+
+// Validate return URL
+const isValidReturn = allowedUrls.some(url => decodedReturnUrl.startsWith(url));
+const finalReturnUrl = isValidReturn ? decodedReturnUrl : "https://www.blooket.com";
+
+// Countdown and redirect
 let seconds = 60;
 const timerDisplay = document.getElementById("timer");
-
 timerDisplay.textContent = seconds;
 
 const interval = setInterval(() => {
   seconds--;
   if (seconds <= 0) {
     clearInterval(interval);
-    window.location.href = returnUrl;
+    window.location.href = finalReturnUrl;
   } else {
     timerDisplay.textContent = seconds;
   }
