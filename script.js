@@ -8,29 +8,6 @@ try {
     decodedReturnUrl = "https://www.blooket.com";
 }
 
-// --- Whitelisted Blooket URLs ---
-const allowedUrls = [
-  'https://www.blooket.com/',
-  'https://dashboard.blooket.com/create',
-  'https://dashboard.blooket.com/my-sets',
-  'https://play.blooket.com/play/',
-  'https://goldquest.blooket.com/',
-  'https://monsterbrawl.blooket.com/',
-  'https://cryptohack.blooket.com/',
-  'https://fishingfrenzy.blooket.com/',
-  'https://deceptivedinos.blooket.com/',
-  'https://blookrush.blooket.com/',
-  'https://battleroyale.blooket.com/',
-  'https://towerdefense.blooket.com/',
-  'https://cafe.blooket.com/',
-  'https://factory.blooket.com/',
-  'https://racing.blooket.com/',
-  'https://crazykingdom.blooket.com/',
-  'https://towerofdoom.blooket.com/',
-  'https://classic.blooket.com/',
-  'https://towerdefense2.blooket.com/',
-];
-
 // Validate return URL
 const isValidReturn = allowedUrls.some(url => decodedReturnUrl.startsWith(url));
 const finalReturnUrl = isValidReturn ? decodedReturnUrl : "https://www.blooket.com";
